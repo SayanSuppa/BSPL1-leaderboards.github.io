@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  background: #0b0c10;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 30px;
+  text-align: center;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+.table {
+  width: 90%;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 80px 1fr 150px 120px;
+  padding: 12px;
+  border-bottom: 1px solid #1f1f1f;
+  text-decoration: none;
+  color: white;
+}
+
+.row:hover {
+  background: #16181d;
+}
+
+.header {
+  color: #9aa0a6;
+  font-size: 12px;
+}
+
+.card {
+  width: 90%;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #111318;
+  border-radius: 10px;
+}

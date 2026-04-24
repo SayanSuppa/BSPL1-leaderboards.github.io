@@ -1,150 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PL1 Global Leaderboard</title>
-
-  <style>
-    body {
-      margin: 0;
-      background: #0b0c10;
-      color: #ffffff;
-      font-family: Arial, sans-serif;
-    }
-
-    header {
-      padding: 30px;
-      text-align: center;
-      border-bottom: 1px solid #1f1f1f;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 32px;
-    }
-
-    .subtitle {
-      color: #9aa0a6;
-      margin-top: 8px;
-      font-size: 14px;
-    }
-
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 20px;
-      border-bottom: 1px solid #1f1f1f;
-    }
-
-    .stat {
-      text-align: center;
-    }
-
-    .stat h2 {
-      margin: 0;
-      font-size: 20px;
-      color: #00ff88;
-    }
-
-    .table {
-      width: 90%;
-      max-width: 900px;
-      margin: 30px auto;
-      border-collapse: collapse;
-    }
-
-    .row {
-      display: grid;
-      grid-template-columns: 80px 1fr 150px 120px;
-      padding: 12px;
-      border-bottom: 1px solid #1f1f1f;
-      align-items: center;
-    }
-
-    .row.header {
-      color: #9aa0a6;
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-
-    .rank {
-      font-weight: bold;
-      color: gold;
-    }
-
-    .player {
-      font-weight: bold;
-    }
-
-    .trophies {
-      color: #00ff88;
-      font-weight: bold;
-    }
-
-    .badge {
-      font-size: 12px;
-      padding: 4px 8px;
-      background: #1f1f1f;
-      border-radius: 6px;
-      display: inline-block;
-    }
-
-    .top1 {
-      background: rgba(255, 215, 0, 0.08);
-    }
-  </style>
+  <title>PL1 Leaderboard</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
   <h1>🏆 Global PL1 Leaderboard</h1>
-  <div class="subtitle">Verified full Power 1 accounts only</div>
 </header>
 
-<div class="stats">
-  <div class="stat">
-    <h2>128</h2>
-    <div>PL1 Accounts</div>
-  </div>
-  <div class="stat">
-    <h2>52,300</h2>
-    <div>Highest Trophies</div>
-  </div>
-  <div class="stat">
-    <h2>LIVE</h2>
+<div class="table">
+
+  <div class="row header">
+    <div>Rank</div>
+    <div>Player</div>
+    <div>Trophies</div>
     <div>Status</div>
   </div>
-</div>
 
-<div class="row header">
-  <div>Rank</div>
-  <div>Player</div>
-  <div>Trophies</div>
-  <div>Status</div>
-</div>
+  <a class="row" href="player.html?tag=PLAYER1">
+    <div>#1</div>
+    <div>PlayerOne</div>
+    <div>52,300</div>
+    <div>PL1</div>
+  </a>
 
-<div class="row top1">
-  <div class="rank">#1</div>
-  <div class="player">PlayerOne</div>
-  <div class="trophies">52,300</div>
-  <div><span class="badge">Verified PL1</span></div>
-</div>
+  <a class="row" href="player.html?tag=PLAYER2">
+    <div>#2</div>
+    <div>PlayerTwo</div>
+    <div>51,200</div>
+    <div>PL1</div>
+  </a>
 
-<div class="row">
-  <div class="rank">#2</div>
-  <div class="player">PlayerTwo</div>
-  <div class="trophies">51,200</div>
-  <div><span class="badge">Verified PL1</span></div>
-</div>
-
-<div class="row">
-  <div class="rank">#3</div>
-  <div class="player">PlayerThree</div>
-  <div class="trophies">50,900</div>
-  <div><span class="badge">Verified PL1</span></div>
 </div>
 
 </body>

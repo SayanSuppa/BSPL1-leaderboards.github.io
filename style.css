@@ -5,36 +5,58 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* HEADER */
 header {
   padding: 30px;
   text-align: center;
   border-bottom: 1px solid #1f1f1f;
 }
 
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+/* TABLE WRAPPER */
 .table {
   width: 90%;
   max-width: 900px;
   margin: 30px auto;
 }
 
+/* ROWS */
 .row {
   display: grid;
   grid-template-columns: 80px 1fr 150px 120px;
-  padding: 12px;
+  padding: 14px 12px;
   border-bottom: 1px solid #1f1f1f;
   text-decoration: none;
   color: white;
+  align-items: center;
+  transition: background 0.15s ease;
 }
 
+/* hover effect (more esports-like) */
 .row:hover {
   background: #16181d;
+  cursor: pointer;
 }
 
+/* HEADER ROW */
 .header {
   color: #9aa0a6;
   font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* TOP 1 highlight (important esports feel) */
+.top1 {
+  background: rgba(255, 215, 0, 0.06);
+  border-left: 3px solid gold;
+}
+
+/* PLAYER CARD PAGE */
 .card {
   width: 90%;
   max-width: 700px;
@@ -42,4 +64,22 @@ header {
   padding: 20px;
   background: #111318;
   border-radius: 10px;
+  border: 1px solid #1f1f1f;
+}
+
+/* STATUS BADGES */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+  background: #1f1f1f;
+}
+
+.badge.ok {
+  color: #00ff88;
+}
+
+.badge.bad {
+  color: #ff4d4d;
 }

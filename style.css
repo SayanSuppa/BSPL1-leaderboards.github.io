@@ -3,6 +3,7 @@ body {
   background: #0b0c10;
   color: white;
   font-family: Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* HEADER */

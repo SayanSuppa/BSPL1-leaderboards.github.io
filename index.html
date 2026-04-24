@@ -20,32 +20,47 @@
     <div>Status</div>
   </div>
 
+  <!-- dynamic rows go here -->
+  <div id="rows"></div>
+
+</div>
+
 <script>
 async function loadLeaderboard() {
-  const res = await fetch("https://your-api.com/leaderboard");
-  const data = await res.json();
+  const container = document.getElementById("rows");
 
-  const container = document.querySelector(".table");
+  // loading state
+  container.innerHTML = `<div class="row">Loading...</div>`;
 
-  data.forEach(player => {
-    const row = document.createElement("a");
-    row.className = "row";
-    row.href = `player.html?tag=${player.tag}`;
+  try {
+    const res = await fetch("https://your-api.com/leaderboard");
+    const data = await res.json();
 
-    row.innerHTML = `
-      <div>#${player.rank}</div>
-      <div>${player.name}</div>
-      <div>${player.trophies}</div>
-      <div>${player.is_full_pl1 ? "PL1 ✅" : "Broken ❌"}</div>
-    `;
+    container.innerHTML = "";
 
-    container.appendChild(row);
-  });
+    data.forEach(player => {
+      const row = document.createElement("a");
+      row.className = "row";
+      row.href = `player.html?tag=${encodeURIComponent(player.tag)}`;
+
+      row.innerHTML = `
+        <div>#${player.rank}</div>
+        <div>${player.name}</div>
+        <div>${player.trophies}</div>
+        <div>${player.is_full_pl1 ? "PL1 ✅" : "Broken ❌"}</div>
+      `;
+
+      container.appendChild(row);
+    });
+
+  } catch (e) {
+    container.innerHTML = `<div class="row">Failed to load data</div>`;
+    console.error(e);
+  }
 }
 
 loadLeaderboard();
 </script>
-</div>
 
 </body>
 </html>

@@ -12,17 +12,26 @@
   <p id="tag"></p>
 </header>
 
-<div class="card">
-  <h2>🏆 Stats</h2>
-  <p>Trophies: <b>52,300</b></p>
-  <p>Status: <b>Full PL1 ✅</b></p>
-</div>
+<script>
+const params = new URLSearchParams(window.location.search);
+const tag = params.get("tag");
 
-<div class="card">
-  <h2>🧩 Brawlers</h2>
-  <p>All brawlers are Power 1</p>
-</div>
+async function loadPlayer() {
+  const res = await fetch(`https://your-api.com/player/${tag}`);
+  const data = await res.json();
 
+  document.getElementById("name").innerText = data.name;
+  document.getElementById("tag").innerText = data.tag;
+
+  document.querySelector(".card").innerHTML = `
+    <h2>🏆 Stats</h2>
+    <p>Trophies: <b>${data.trophies}</b></p>
+    <p>Status: <b>${data.is_full_pl1 ? "Full PL1 ✅" : "Not PL1 ❌"}</b></p>
+  `;
+}
+
+loadPlayer();
+</script>
 <script>
   const params = new URLSearchParams(window.location.search);
   const tag = params.get("tag");

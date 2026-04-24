@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Player Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1 id="name">Player Profile</h1>
+  <p id="tag"></p>
+</header>
+
+<div class="card">
+  <h2>🏆 Stats</h2>
+  <p>Trophies: <b>52,300</b></p>
+  <p>Status: <b>Full PL1 ✅</b></p>
+</div>
+
+<div class="card">
+  <h2>🧩 Brawlers</h2>
+  <p>All brawlers are Power 1</p>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const tag = params.get("tag");
+
+  document.getElementById("tag").innerText = "Tag: " + tag;
+  document.getElementById("name").innerText = tag;
+</script>
+
+</body>
+</html>

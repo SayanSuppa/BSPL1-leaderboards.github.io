@@ -20,20 +20,31 @@
     <div>Status</div>
   </div>
 
-  <a class="row" href="player.html?tag=PLAYER1">
-    <div>#1</div>
-    <div>PlayerOne</div>
-    <div>52,300</div>
-    <div>PL1</div>
-  </a>
+<script>
+async function loadLeaderboard() {
+  const res = await fetch("https://your-api.com/leaderboard");
+  const data = await res.json();
 
-  <a class="row" href="player.html?tag=PLAYER2">
-    <div>#2</div>
-    <div>PlayerTwo</div>
-    <div>51,200</div>
-    <div>PL1</div>
-  </a>
+  const container = document.querySelector(".table");
 
+  data.forEach(player => {
+    const row = document.createElement("a");
+    row.className = "row";
+    row.href = `player.html?tag=${player.tag}`;
+
+    row.innerHTML = `
+      <div>#${player.rank}</div>
+      <div>${player.name}</div>
+      <div>${player.trophies}</div>
+      <div>${player.is_full_pl1 ? "PL1 ✅" : "Broken ❌"}</div>
+    `;
+
+    container.appendChild(row);
+  });
+}
+
+loadLeaderboard();
+</script>
 </div>
 
 </body>

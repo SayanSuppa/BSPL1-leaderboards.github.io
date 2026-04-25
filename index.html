@@ -33,7 +33,7 @@ async function loadLeaderboard() {
   container.innerHTML = `<div class="row">Loading...</div>`;
 
   try {
-    const res = await fetch("https://your-api.com/leaderboard");
+    const res = await fetch("http://localhost:3000/leaderboard");
     const data = await res.json();
 
     container.innerHTML = "";

@@ -17,7 +17,7 @@ const params = new URLSearchParams(window.location.search);
 const tag = params.get("tag");
 
 async function loadPlayer() {
-  const res = await fetch(`https://your-api.com/player/${tag}`);
+  const res = await fetch(`https://pl1-backend.onrender.com/player/${tag}`);
   const data = await res.json();
 
   document.getElementById("name").innerText = data.name;
@@ -31,13 +31,6 @@ async function loadPlayer() {
 }
 
 loadPlayer();
-</script>
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const tag = params.get("tag");
-
-  document.getElementById("tag").innerText = "Tag: " + tag;
-  document.getElementById("name").innerText = tag;
 </script>
 
 </body>

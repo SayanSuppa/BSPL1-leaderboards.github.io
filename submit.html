@@ -9,7 +9,22 @@
 <h1>Submit your PL1 account</h1>
 
 <input id="tag" placeholder="#GRJ0L9C82" style="padding:10px;">
-<button onclick="submitTag()">Check</button>
+<button onclick="test()">Check</button>
+
+<script>
+async function test() {
+  console.log("BUTTON CLICKED");
+
+  const res = await fetch("https://pl1-backend.onrender.com/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ tag: "#GRJ0L9C82" })
+  });
+
+  const data = await res.json();
+  console.log(data);
+}
+</script>
 
 <p id="result"></p>
 

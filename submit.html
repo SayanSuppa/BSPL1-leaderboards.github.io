@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Submit PL1</title>
+</head>
+
+<body style="background:#0b0c10;color:white;font-family:Arial;text-align:center;">
+
+<h1>Submit your PL1 account</h1>
+
+<input id="tag" placeholder="#GRJ0L9C82" style="padding:10px;">
+<button onclick="submitTag()">Check</button>
+
+<p id="result"></p>
+
+<script>
+async function submitTag() {
+  const tag = document.getElementById("tag").value;
+
+  const res = await fetch("http://localhost:3000/submit", {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({ tag })
+  });
+
+  const data = await res.json();
+
+  document.getElementById("result").innerText = data.message;
+}
+</script>
+
+</body>
+</html>

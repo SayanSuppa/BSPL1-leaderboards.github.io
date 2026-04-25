@@ -15,7 +15,7 @@
 async function test() {
   console.log("BUTTON CLICKED");
 
-  const res = await fetch("https://pl1-backend.onrender.com/submit", {
+  const res = await fetch("http://localhost:3000/submit", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ tag: "#GRJ0L9C82" })

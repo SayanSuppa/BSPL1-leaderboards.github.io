@@ -16,6 +16,9 @@
 <script>
 async function submitTag() {
   const tag = document.getElementById("tag").value;
+  
+  console.log("SUBMIT TAG RECEIVED:", tag);
+  console.log("API KEY EXISTS:", !!API_KEY);
 
   const res = await fetch("https://pl1-backend.onrender.com/submit", {
     method: "POST",

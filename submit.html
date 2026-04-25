@@ -17,7 +17,7 @@
 async function submitTag() {
   const tag = document.getElementById("tag").value;
 
-  const res = await fetch("http://localhost:3000/submit", {
+  const res = await fetch("https://pl1-backend.onrender.com/submit", {
     method: "POST",
     headers: {"Content-Type":"application/json"},
     body: JSON.stringify({ tag })
